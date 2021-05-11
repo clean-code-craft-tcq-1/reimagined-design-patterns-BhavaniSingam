@@ -1,0 +1,28 @@
+State is a behavioral design pattern that lets an object alter its behavior when its internal state changes.
+It appears as if the object changed its class.
+
+Problems you can solve using State:
+  1) Use the pattern when you have a class polluted with massive conditionals that alter 
+     how the class behaves according to the current values of the class’s fields.
+ 
+ Example: Imagine that we have a Document class. A document can be in one of three states: Draft, Moderation and Published. 
+          The publish method of the document works a little bit differently in each state:
+           In Draft, it moves the document to moderation.
+           In Moderation, it makes the document public, but only if the current user is an administrator.
+           In Published, it doesn’t do anything at all.
+           The biggest weakness of a state machine based on conditionals reveals itself once we start adding more and more states and state-dependent behaviors to the Document class. Most methods will contain monstrous conditionals that pick the proper behavior of a method according to the current state. 
+           Code like this is very difficult to maintain because any change to the transition logic may require changing state conditionals in every method.
+Solution:
+The State pattern suggests that you create new classes for all possible states of an object and extract all state-specific behaviors into these classes.
+Instead of implementing all behaviors on its own, the original object, called context, 
+stores a reference to one of the state objects that represents its current state, and delegates all the state-related work to that object.
+
+  2) Use the State pattern when you have an object that behaves differently depending on its current state, 
+     the number of states is enormous,and the state-specific code changes frequently.
+    
+Advantages:
+1) Simplify the code of the context by eliminating bulky state machine conditionals.
+2) Open/Closed Principle. Introduce new states without changing existing state classes or the context.
+
+Disadvantages:
+Applying the pattern can be overkill if a state machine has only a few states or rarely changes.
