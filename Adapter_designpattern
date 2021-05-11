@@ -1,0 +1,22 @@
+Definition:
+  Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate 
+  (This is a special object that converts the interface of one object so that another object can understand it).
+In Simple terms: Get an adapter which you can put into the power socket and then you put your plug into the other end of the adapter. 
+                 The adapter changes the form of your plug so that you can use it with the power socket. 
+
+Problems you can solve using adapter:
+  1) Convert data into various formats
+  example: Suppose consider a stock market data which user wants to see so an app which downloads the data from multiple sources in the xml format and displays using charts, diagrams to user
+  In future, you want to integrate some 3rd party app to this, but that app accepts the data in json format only so, we had to change existing code.
+  Here is the best example using adapter.
+  
+Advantange of this pattern:
+ Single Responsibility Principle. You can separate the interface or data conversion code from the primary business logic of the program.
+ Open/Closed Principle. You can introduce new types of adapters into the program without breaking the existing client code, as long as they work with the adapters through the client interface.
+
+Disadvantage:
+  The overall complexity of the code increases because you need to introduce a set of new interfaces and classes. Sometimes it’s simpler just to change the service class so that it matches the rest of your code.
+  
+The Adapter Pattern is an often-used pattern in object-oriented programming languages. 
+Similar to adapters in the physical world, you implement a class that bridges the gap between an expected interface and an existing class.
+That enables you to reuse an existing class that doesn’t implement a required interface and to use the functionality of multiple classes, that would otherwise be incompatible.
