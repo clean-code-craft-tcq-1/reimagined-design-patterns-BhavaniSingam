@@ -1,0 +1,19 @@
+Builder pattern aims to “Separate the construction of a complex object from its representation so that the same construction process can create different representations.”
+ It is used to construct a complex object step by step and the final step will return the object. The process of constructing an object should be generic so that it can be used to create different representations of the same object.
+
+Problems you can solve using Builder:
+  1)Consider a scenario in which a client has a certification website and they want to ask students their personal information. 
+  The student is provided with a form that has multiple questions, of which only firstName and lastName are mandatory.
+  The client wants to store this information in an immutable object. We can save this information by directly calling the constructor, but the form has ample questions and students can choose to answer only some of them.
+  It is not practical to create a constructor with different combinations. This is a perfect scenario for using the Builder Design Pattern.
+  
+  2)For example, let’s think about how to create a House object. To build a simple house, you need to construct four walls and a floor, install a door, fit a pair of windows, and build a roof. 
+     but what if you want a bigger, brighter house, with a backyard and other goodies (like a heating system, plumbing, and electrical wiring).
+     The Builder pattern suggests that you extract the object construction code out of its own class and move it to separate objects called builders.
+
+Advantages
+•	It provides a clear separation between the construction and representation of an object.
+•	The builder pattern increases robustness, as the only fully constructed object will be available to the client.
+
+Disadavantage
+The builder pattern is verbose and requires code duplication as Builder needs to copy all fields from Original/Outer Class.
